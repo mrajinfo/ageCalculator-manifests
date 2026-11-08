@@ -16,7 +16,7 @@ spec:
       containers:
         - name: backend
           # The tag is rewritten by CI in mrajinfo/ageCalculator on every push to main.
-          image: docker.io/mrajshrestha/agecalculator-backend:f4a14cb
+          image: docker.io/mrajinfo/agecalculator-backend:033b6a9
           env:
             - name: MONGODB_URI
               value: mongodb://mongo:27017/nepali_age_calculator

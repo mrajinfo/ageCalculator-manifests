@@ -16,7 +16,7 @@ spec:
       containers:
         - name: frontend
           # The tag is rewritten by CI in mrajinfo/ageCalculator on every push to main.
-          image: docker.io/mrajshrestha/agecalculator-frontend:f4a14cb
+          image: docker.io/mrajinfo/agecalculator-frontend:033b6a9
           ports:
             - containerPort: 80
           readinessProbe:
