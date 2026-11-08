@@ -2,7 +2,7 @@
 
 Kubernetes manifests for [mrajinfo/ageCalculator](https://github.com/mrajinfo/ageCalculator), deployed by Argo CD.
 
-On every push to `main`, CI in the app repo builds `mrajshrestha/agecalculator-frontend` and `mrajshrestha/agecalculator-backend`, pushes them to Docker Hub tagged with the short commit SHA, and commits that tag to `k8s/frontend.yaml` and `k8s/backend.yaml` here. Argo CD sees the commit and rolls it out.
+On every push to `main`, CI in the app repo builds `mrajinfo/agecalculator-frontend` and `mrajinfo/agecalculator-backend`, pushes them to Docker Hub tagged with the short commit SHA, and commits those image references to `k8s/frontend.yaml` and `k8s/backend.yaml` here. Argo CD sees the commit and rolls it out.
 
 | Path | What it is |
 | --- | --- |
