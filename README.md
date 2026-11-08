@@ -12,6 +12,8 @@ On every push to `main`, CI in the app repo builds `mrajinfo/agecalculator-front
 
 ## Set up on Minikube
 
+Run the commands below in Windows (PowerShell), where Minikube runs. WSL's own `kubectl` isn't connected to this cluster; inside WSL, type `kubectl.exe` instead of `kubectl`.
+
 ```sh
 minikube start --cpus=4 --memory=6g
 kubectl create namespace argocd
@@ -34,7 +36,9 @@ Both logins use the user `admin`. The passwords:
 
 ```sh
 kubectl -n argocd get secret argocd-initial-admin-secret -o go-template='{{.data.password | base64decode}}'
-kubectl -n monitoring get secret monitoring-grafana -o go-template='{{index .data "admin-password" | base64decode}}'
+kubectl -n monitoring get secret monitoring-grafana -o go-template='{{index .data `admin-password` | base64decode}}'
 ```
+
+The backticks are deliberate: Windows PowerShell 5.1 strips double quotes inside `'…'` before kubectl sees them.
 
 In Grafana, open **Dashboards → Age Calculator**.
